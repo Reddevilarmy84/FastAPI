@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-size: cover;
+    background-image: url("prog.jpg");
+    background-attachment: fixed;
+}
+
+#background {
+    background-color: rgba(56, 56, 56, 0.9);
+    margin: 3rem;
+    border: black solid 0.2rem;
+    border-radius: 2rem;
+}
+
+.header {
+    padding: 0.5rem;
+    height: max-content;
+    background-color: #2c2c2c;
+    border-bottom: black solid 0.2rem;
+    text-align: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.details {
+    padding: 0.5rem;
+    background-color: #e1cdcd;
+    width: 20rem;
+    position: absolute;
+    right: 35px;
+    top: 240px;
+    border: black solid 0.2rem;
+    height: max-content;
+}
+
+
+#navigation {
+    margin: -20px 0 0 -10px;
+    background-color: rgba(255, 0, 0, 1);
+    height: max-content;
+    width: max-content;
+    border-left: black solid 0.2rem;
+    border-top: black solid 0.2rem;
+    border-bottom: black solid 0.2rem;
+    position: sticky;
+    top: -12px;
+    display: flex;
+}
+
+h1 {
+    color: #e1cdcd;
+    font-family: "Comic Sans MS";
+    font-size: 5rem;
+    text-shadow: rgba(255, 0, 0, 1) 2px 2px 2px;
+}
+
+p {
+    font-size: 1rem;
+    font-family: "Comic Sans MS";
+    font-weight: bolder;
+    color: black;
+    text-shadow: #e1cdcd 1px 1px 3px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.JavaBox {
+    font-family: "Comic Sans MS";
+    font-size: 25px;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(225, 205, 205, 1);
+    height: max-content;
+    text-align: center;
+    border: #2c2c2c solid 5px;
+    border-radius: 50px ;
+    width: max-content;
+    box-shadow: #2c2c2c 2px 2px 10px;
+}
+
+.det1ails {
+    font-family: "Comic Sans MS";
+    font-size: 25px;
+    background: #e1cdcd;
+    border-radius: 100px;
+    border: #2c2c2c solid 0.2rem;
+    margin: 20px;
+    padding: 20px;
+    width: max-content;
+    height: max-content;
+}
+
+.page-footer {
+    padding: 1rem;
+    background-color: #2c2c2c;
+    border-top: black solid 0.2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    text-align: center;
+}
+
+button {
+    font-family: "Comic Sans MS";
+    font-size: 1rem;
+}
+
+.link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    text-decoration: none;
+    border-right: black solid 0.2rem;
+}
+
+.pLink:hover {
+    color: #ffffff;
+    font-weight: bolder;
+    text-shadow: white 3px 3px 3px;
+}

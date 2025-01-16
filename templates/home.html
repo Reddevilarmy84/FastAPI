@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ГЛАВНАЯ</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='main.css') }}">
+    <script src="{{ url_for('static', path='JC.js') }}"></script>
+</head>
+<body>
+    <div id="background">
+        <header class="header">
+            <h1 id="myHeader">Кодим...</h1>
+            <details class="details">
+                <summary>
+                    <p>Подробная информация о сайте<p>
+                </summary>
+                <p>Привет! Меня зовут Александр и я начинающий разработчик.
+                    Этот сайт - мой проэкт, в котором я реализую на
+                    практике полученные знания от изучения Хард скилов.</p>  <p>Стэк: FastAPI, HTML, CSS, JS</p>
+            </details>
+        </header>
+        <nav id="navigation">
+            <a class="link" href="https://doka.guide" target="_blank"><p class="pLink">DOKA</p></a>
+            <a class="link" href="https://habr.com/ru/feed/" target="_blank"><p class="pLink">Habr</p></a>
+            <a class="link" href="https://itproger.com/" target="_blank"><p class="pLink">ITprogger</p></a>
+        </nav>
+        <section class="content" id="content">
+ <!--       <div class="JavaBox">
+                <script>
+                </script>
+            </div>                      --код для добавления нового JavaBox-->
+            <div class="JavaBox">
+                <p>поприветствуй гостей</p>
+                <script>
+                    Hello()
+                </script>
+            </div>  <!-- вызывает функцию Hello() c использованием метода document.write() из файла JC.js -->
+            <div class="JavaBox" onclick="showTime()">
+                <p>Нажми на меня, чтобы получить уведомление<br> с полной информацией о времени</p>
+                <span>Московское время: </span>
+                <script>
+                    TimeNow()
+                </script>
+            </div>  <!-- вызывает функцию TimeNow() из файла JC.js так же функцию showTime() при нажатии на элемент-->
+            <div class="JavaBox">
+                <span style="font-size: 32px" onclick="showMessage()">Покажи уведомление<br> с приветствием</span>
+            </div>  <!-- вызывает функцию showMessage() с использованием метода alert() из файла JC.js -->
+            <div class="JavaBox" style="display: flex">
+                <span style="font-size: 32px; margin: 0 0.7rem; border-right: black solid 0.1rem; padding-right: 1rem" onclick="changeFontColor()">Поменять цвет<br> в Header</span>
+                <span style="font-size: 32px; margin: 0 0.7rem; border-right: black solid 0.1rem; padding-right: 1rem" onclick="changeText()">Поменять текст<br> в Header</span>
+                <span style="font-size: 32px; margin: 0 0.7rem" onclick="cancelChanges()">Вернуть<br> как было</span>
+            </div>
+            <div class="JavaBox" onclick="userName()">
+                <h2 id="greet" >Как тебя зовут?<br></h2>
+                <script>
+                    function userName() {
+                        document.getElementById('myHeader').innerHTML = "Кодим. "
+                        var userName = prompt("Как тебя зовут?")
+                        var h2Greed = document.getElementById('greet')
+                        h2Greed.textContent = "Привет, " + userName + "!"
+                        document.getElementById('myHeader').append(userName + " и я!")
+                    }
+                </script>
+
+            </div>
+            <div class="JavaBox" id="contentBackground">
+                Поменять фон блока c ID "content"
+                <script>
+                    document.getElementById('contentBackground').addEventListener('click', function () {
+                    document.getElementById('content').style.backgroundColor = "rgba(256, 256, 256, 0.3)"
+                    document.getElementById('content2').style.backgroundColor = "rgba(256, 256, 256, 0.3)"
+                    })
+                </script>
+            </div>
+            <div class="JavaBox" id="contentBackgroundBack">
+                Поменять фон как было."
+                <script>
+                    document.getElementById('contentBackgroundBack').addEventListener('click', function () {
+                    document.getElementById('content').style.backgroundColor = ""
+                    document.getElementById('content2').style.backgroundColor = ""
+                    })
+                </script>
+            </div>
+            <div class="JavaBox" id="ChangeThis">Нажми на меня!
+                <script>
+                    document.getElementById('ChangeThis').addEventListener("click", function () {this.textContent = 'Ты нажал на меня'})
+                </script>
+            </div>
+            <div class="JavaBox" id="one">Выключено
+                <script>
+                        var i = 'true'
+                    setInterval(document.getElementById('one').addEventListener("click", function () {
+                        if(i === 'true'){
+                            this.textContent = 'Включено...';
+                            this.id = 'two';
+                            this.style.backgroundColor = "rgb(17,255,0)"
+                            i = 'false'
+                        }
+                        else{
+                            this.textContent = 'Выключено';
+                            this.id = 'one';
+                            this.style.backgroundColor = ""
+                            i = 'true'
+                        }
+
+                    }), 1000)
+                </script>
+        </div>  <!--Rнопка-триггер.setInterval(document.getElementById('one')-->
+        </section>
+        <section style="height: 50rem" id="content2">
+        </section>
+        <footer class="page-footer">
+            <h1>2025</h1>
+        </footer>
+    </div>
+</body>
+</html>
