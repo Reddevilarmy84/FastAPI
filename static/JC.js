@@ -21,6 +21,6 @@ function changeFontColor() {
     document.getElementById("myHeader").style.color = "red"
 }
 function cancelChanges() {
-    document.getElementById("myHeader").style.color = "#d9c4c4"
-    document.getElementById("myHeader").innerHTML = ""
+    document.getElementById("myHeader").style.color = ''
+    document.getElementById("myHeader").textContent = 'Кодим...'
 }

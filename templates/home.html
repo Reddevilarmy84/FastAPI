@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>ГЛАВНАЯ</title>
     <link rel="stylesheet" href="{{ url_for('static', path='main.css') }}">
-    <script src="{{ url_for('static', path='JC.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', path='JC.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', path='jquery-3.7.1.js') }}"></script>
 </head>
 <body>
     <div id="background">
@@ -83,7 +84,11 @@
             </div>
             <div class="JavaBox" id="ChangeThis">Нажми на меня!
                 <script>
-                    document.getElementById('ChangeThis').addEventListener("click", function () {this.textContent = 'Ты нажал на меня'})
+                    $(document).ready(function(){
+                    $("#ChangeThis").click(function(){
+                        $(this).text("Ты нажал на меня!");
+                    });
+                    });
                 </script>
             </div>
             <div class="JavaBox" id="one">Выключено
@@ -105,7 +110,26 @@
 
                     }), 1000)
                 </script>
-        </div>  <!--Rнопка-триггер.setInterval(document.getElementById('one')-->
+        </div>  <!-- Кнопка-триггер c использованием setInterval() и addEventListener() -->
+            <div class="JavaBox" id="off">Выключено
+                <script>
+                        var i = false
+                    setInterval($("#off").click(function () {
+                        if(!i){
+                            $(this).text('Включено...');
+                            this.id = 'on';
+                            $(this).css('backgroundColor', 'rgb(17,255,0)')
+                            i = true
+                        }
+                        else{
+                            $(this).text('Выключено');
+                            this.id = 'off';
+                            $(this).css('backgroundColor', '')
+                            i = false
+                        }
+                    }), 1000)
+                </script>
+        </div>  <!-- Кнопка-триггер c использованием jQuery -->
         </section>
         <section style="height: 50rem" id="content2">
         </section>
