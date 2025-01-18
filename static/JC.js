@@ -1,12 +1,16 @@
 
 let nowTime = new Date()
-function TimeNow() {
-                document.write(nowTime.toLocaleTimeString())
-            }
-function showTime() {
-                var date = nowTime.toDateString()
-                var time = nowTime.toTimeString()
-                alert(date + " " + time)
+function time() {
+                var now = new Date()
+                var seconds = now.getSeconds()
+                var minutes = now.getMinutes()
+                var hours = now.getHours()
+                var AMPM = hours >= 12 ? 'PM' : 'AM'
+                seconds = seconds < 10 ? '0' + seconds : seconds
+                minutes = minutes < 10 ? '0' + minutes : minutes
+                hours = hours === 12 ? hours : hours%12
+                document.getElementById('time').innerHTML = `${AMPM}:${hours}:${minutes}:${seconds}`
+                setTimeout(time, 1000)
             }
 function Hello() {
                 document.write("Hello! I am Java Script!")

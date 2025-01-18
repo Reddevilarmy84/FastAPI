@@ -26,40 +26,40 @@
             <a class="link" href="https://itproger.com/" target="_blank"><p class="pLink">ITprogger</p></a>
         </nav>
         <section class="content" id="content">
+
  <!--       <div class="JavaBox">
                 <script>
                 </script>
-            </div>                      --код для добавления нового JavaBox-->
+            </div>                       --код для добавления нового JavaBox-->
+
             <div class="JavaBox">
                 <p>поприветствуй гостей</p>
                 <script>
                     Hello()
                 </script>
-            </div>  <!-- вызывает функцию Hello() c использованием метода document.write() из файла JC.js -->
-            <div class="JavaBox" onclick="showTime()">
-                <p>Нажми на меня, чтобы получить уведомление<br> с полной информацией о времени</p>
-                <span>Московское время: </span>
-                <script>
-                    TimeNow()
-                </script>
-            </div>  <!-- вызывает функцию TimeNow() из файла JC.js так же функцию showTime() при нажатии на элемент-->
+            </div>  <!-- написать в тэге Hello! I am Java Script!-->
+            <div class="JavaBox">
+                <div id="time"></div>
+                    <script>
+                        time();
+                    </script>
+            </div>  <!-- показывать текущее время  в реальном времени с использованием setTimeout(), если использовать setInterval(), возникает задержка после загрузки страницы-->
             <div class="JavaBox">
                 <span style="font-size: 32px" onclick="showMessage()">Покажи уведомление<br> с приветствием</span>
-            </div>  <!-- вызывает функцию showMessage() с использованием метода alert() из файла JC.js -->
+            </div>  <!-- использовать метод alert() -->
             <div class="JavaBox" style="display: flex">
                 <span style="font-size: 32px; margin: 0 0.7rem; border-right: black solid 0.1rem; padding-right: 1rem" onclick="changeFontColor()">Поменять цвет<br> в Header</span>
                 <span style="font-size: 32px; margin: 0 0.7rem; border-right: black solid 0.1rem; padding-right: 1rem" onclick="changeText()">Поменять текст<br> в Header</span>
                 <span style="font-size: 32px; margin: 0 0.7rem" onclick="cancelChanges()">Вернуть<br> как было</span>
-            </div>
+            </div> <!-- заменить текст, изменить цвет в тэге header или вернуть как в CSS -->
             <div class="JavaBox" onclick="userName()">
                 <h2 id="greet" >Как тебя зовут?<br></h2>
                 <script>
                     function userName() {
                         document.getElementById('myHeader').innerHTML = "Кодим. "
                         var userName = prompt("Как тебя зовут?")
-                        var h2Greed = document.getElementById('greet')
-                        h2Greed.textContent = "Привет, " + userName + "!"
-                        document.getElementById('myHeader').append(userName + " и я!")
+                        $('#greet').text(`Привет, ${userName}!`)
+                        document.getElementById('myHeader').append(`${userName} и я!`)
                     }
                 </script>
 
@@ -90,10 +90,10 @@
                     });
                     });
                 </script>
-            </div>
+            </div> <!-- jQuery. Поменять текст тэга
             <div class="JavaBox" id="one">Выключено
                 <script>
-                        var i = 'true'
+                    var i = 'true'
                     setInterval(document.getElementById('one').addEventListener("click", function () {
                         if(i === 'true'){
                             this.textContent = 'Включено...';
@@ -129,7 +129,7 @@
                         }
                     }), 1000)
                 </script>
-        </div>  <!-- Кнопка-триггер c использованием jQuery -->
+        </div>  <!-- Такая же Кнопка-триггер c использованием синтаксиса jQuery -->
         </section>
         <section style="height: 50rem" id="content2">
         </section>
