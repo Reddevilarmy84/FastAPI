@@ -90,7 +90,7 @@
                     });
                     });
                 </script>
-            </div> <!-- jQuery. Поменять текст тэга
+            </div> <!-- jQuery. Поменять текст тэга -->
             <div class="JavaBox" id="one">Выключено
                 <script>
                     var i = 'true'
@@ -130,6 +130,13 @@
                     }), 1000)
                 </script>
         </div>  <!-- Такая же Кнопка-триггер c использованием синтаксиса jQuery -->
+            <div class="JavaBox" id="theme">back
+                <script>
+                    $('#theme').click(function (){
+                        $('.header').css('backgroundColor', '#9a9a9a');
+                    })
+                </script>
+            </div>
         </section>
         <section style="height: 50rem" id="content2">
         </section>
