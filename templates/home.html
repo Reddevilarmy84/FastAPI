@@ -10,6 +10,50 @@
 <body>
     <div id="background">
         <header class="header">
+            <div id="theme">Тёмная тема.
+                <script>
+                    var clickCount = 0;
+                    var time = 'night';
+                    document.addEventListener('DOMContentLoaded',function theme () {
+                        document.getElementById('theme').addEventListener("click", function () {
+                            if (clickCount === 2) {
+                                clickCount = 0;
+                                let nowtTime = new Date();
+                                let hours = nowtTime.getHours();
+                                if (hours < 20) {
+                                    day();
+                                    time = 'day';
+                                    $('#theme').text(`АВТО режим. (светлая)`);
+                                }
+                                else {
+                                    night();
+                                    time = 'night';
+                                    $('#theme').text(`АВТО режим. (тёмная)`);
+                                }
+                            }
+                            else {
+                                if (time === 'night') {
+                                    $('.header').css('backgroundColor', 'rgb(145,145,145)');
+                                    $('#background').css('backgroundColor', 'rgba(253,253,253,0.8)');
+                                    $('.page-footer').css('backgroundColor', 'rgb(145,145,145)');
+                                    time = 'day';
+                                    clickCount++
+                                    $('#theme').text(`Светлая тема.`)
+                                } else {
+                                    $('.header').css('backgroundColor', 'rgb(44, 44, 44)');
+                                    $('#background').css('backgroundColor', 'rgba(56, 56, 56, 0.9)');
+                                    $('.page-footer').css('backgroundColor', 'rgb(44, 44, 44)');
+                                    time = 'night';
+                                    clickCount++
+                                    $('#theme').text(`Тёмная тема.`)
+                                }
+                            }
+                        })
+
+                    })
+                    setInterval(theme, 5000);
+                </script>
+            </div>  <!-- Темная и светлая темы + автоопределение -->
             <h1 id="myHeader">Кодим...</h1>
             <details class="details">
                 <summary>
@@ -32,12 +76,6 @@
             </div>
         </nav>
         <section class="content" id="content">
-
- <!--       <div class="JavaBox">
-                <script>
-                </script>
-            </div>                       --код для добавления нового JavaBox-->
-
             <div class="JavaBox">
                 <p>поприветствуй гостей</p>
                 <script>
@@ -47,7 +85,7 @@
             <div class="JavaBox">
                 <div id="time"></div>
                     <script>
-                        time();
+                        document.addEventListener('DOMContentLoaded',time());
                     </script>
             </div>  <!-- показывать текущее время  в реальном времени с использованием setTimeout(), если использовать setInterval(), возникает задержка после загрузки страницы-->
             <div class="JavaBox">
@@ -69,24 +107,6 @@
                     }
                 </script>
 
-            </div>
-            <div class="JavaBox" id="contentBackground">
-                Поменять фон блока c ID "content"
-                <script>
-                    document.getElementById('contentBackground').addEventListener('click', function () {
-                    document.getElementById('content').style.backgroundColor = "rgba(256, 256, 256, 0.3)"
-                    document.getElementById('content2').style.backgroundColor = "rgba(256, 256, 256, 0.3)"
-                    })
-                </script>
-            </div>
-            <div class="JavaBox" id="contentBackgroundBack">
-                Поменять фон как было."
-                <script>
-                    document.getElementById('contentBackgroundBack').addEventListener('click', function () {
-                    document.getElementById('content').style.backgroundColor = ""
-                    document.getElementById('content2').style.backgroundColor = ""
-                    })
-                </script>
             </div>
             <div class="JavaBox" id="ChangeThis">Нажми на меня!
                 <script>
@@ -136,13 +156,10 @@
                     }), 1000)
                 </script>
         </div>  <!-- Такая же Кнопка-триггер c использованием синтаксиса jQuery -->
-            <div class="JavaBox" id="theme">back
+ <!--       <div class="JavaBox">
                 <script>
-                    $('#theme').click(function (){
-                        $('.header').css('backgroundColor', '#9a9a9a');
-                    })
                 </script>
-            </div>  <!-- Темная и светлая темы + автоопределение -->
+            </div>                       --код для добавления нового JavaBox-->
         </section>
         <section style="height: 50rem" id="content2">
         </section>

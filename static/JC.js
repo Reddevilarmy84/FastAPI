@@ -28,3 +28,14 @@ function cancelChanges() {
     document.getElementById("myHeader").style.color = ''
     document.getElementById("myHeader").textContent = 'Кодим...'
 }
+function day () {
+    $('.header').css('backgroundColor', 'rgb(145,145,145)');
+    $('#background').css('backgroundColor', 'rgba(253,253,253,0.8)');
+    $('.page-footer').css('backgroundColor', 'rgb(145,145,145)');
+}
+function night () {
+    $('.header').css('backgroundColor', 'rgb(44, 44, 44)');
+    $('#background').css('backgroundColor', 'rgba(56, 56, 56, 0.9)');
+    $('.page-footer').css('backgroundColor', 'rgb(44, 44, 44)');
+}
+

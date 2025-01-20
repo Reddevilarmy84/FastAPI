@@ -37,6 +37,24 @@ body {
     height: max-content;
 }
 
+#theme {
+    padding: 10px;
+    position: relative;
+    left: -8px;
+    top: -8px;
+    background-color: rgba(255, 0, 0, 0.5);
+    width: max-content;
+    font-size: 30px;
+    font-family: "Comic Sans MS";
+    color: #e1cdcd;
+    border-top-left-radius: 30px;
+    transition: all, 0.5s;
+}
+
+#theme:hover {
+    background-color: rgba(255, 0, 0, 1);
+    transform: scale(1.02);
+}
 
 #navigation {
     background-color: rgba(255, 0, 0, 0.5);
