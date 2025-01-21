@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-size: 1vw;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     text-align: center;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
+    user-select: none;
 }
 
 .details {
@@ -35,25 +37,43 @@ body {
     top: 240px;
     border: black solid 0.2rem;
     height: max-content;
+    user-select: none;
 }
 
 #theme {
-    padding: 10px;
-    position: relative;
-    left: -8px;
-    top: -8px;
+    padding: 20px;
+    position: absolute;
+    left: 51px;
+    top: 51px;
     background-color: rgba(255, 0, 0, 0.5);
     width: max-content;
-    font-size: 30px;
+    font-size: 1.5vw;
     font-family: "Comic Sans MS";
     color: #e1cdcd;
     border-top-left-radius: 30px;
     transition: all, 0.5s;
+    user-select: none;
+    cursor: pointer
 }
 
 #theme:hover {
     background-color: rgba(255, 0, 0, 1);
     transform: scale(1.02);
+}
+
+#timenow {
+    padding: 20px;
+    color: white;
+    position: absolute;
+    width: max-content;
+    right: 51px;
+    top: 51px;
+    font-family: "Comic Sans MS";
+    font-size: 1.5vw;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-top-right-radius: 30px;
+    user-select: none;
+
 }
 
 #navigation {
@@ -68,6 +88,16 @@ body {
 .navigation-item {
     padding: 10px 30px;
     transition: all, 0.3s;
+    cursor: pointer
+}
+.navigation-item a{
+    text-decoration: none;
+    user-select: none;
+}
+
+.navigation-item a p {
+    color: #ffffff;
+    font-size: 1.5vw;
 }
 
 .navigation-item:hover {
@@ -77,12 +107,12 @@ body {
 h1 {
     color: #e1cdcd;
     font-family: "Comic Sans MS";
-    font-size: 5rem;
+    font-size: 4vw;
     text-shadow: rgba(255, 0, 0, 1) 2px 2px 2px;
 }
 
 p {
-    font-size: 1rem;
+    font-size: 1vw;
     font-family: "Comic Sans MS";
     font-weight: bolder;
     color: black;
@@ -95,7 +125,7 @@ p {
 
 .JavaBox {
     font-family: "Comic Sans MS";
-    font-size: 25px;
+    font-size: 1.8vw;
     padding: 20px;
     margin: 20px;
     background-color: rgba(225, 205, 205, 1);
@@ -105,13 +135,24 @@ p {
     border-radius: 50px ;
     width: max-content;
     box-shadow: #2c2c2c 2px 2px 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all, 0.3s;
 }
 
-.det1ails {
+.JavaBox:hover {
+    transform: scale(1.01);
+}
+
+.JavaBox:active {
+    transform: scale(0.99)
+}
+
+.details {
     font-family: "Comic Sans MS";
-    font-size: 25px;
+    font-size: 1vw;
     background: #e1cdcd;
-    border-radius: 100px;
+    border-radius: 1rem;
     border: #2c2c2c solid 0.2rem;
     margin: 20px;
     padding: 20px;
@@ -126,18 +167,7 @@ p {
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     text-align: center;
+    user-select: none;
 }
 
-button {
-    font-family: "Comic Sans MS";
-    font-size: 1rem;
-}
 
-.link {
-    text-decoration: none;
-}
-
-.pLink {
-    color: #ffffff;
-    font-size: 1.2rem;
-}

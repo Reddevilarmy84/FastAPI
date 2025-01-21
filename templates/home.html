@@ -10,6 +10,23 @@
 <body>
     <div id="background">
         <header class="header">
+            <div id="timenow">
+                <div id="time"></div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded',function time() {
+                            var now = new Date()
+                            var seconds = now.getSeconds()
+                            var minutes = now.getMinutes()
+                            var hours = now.getHours()
+                            var AMPM = hours >= 12 ? 'PM' : 'AM'
+                            seconds = seconds < 10 ? '0' + seconds : seconds
+                            minutes = minutes < 10 ? '0' + minutes : minutes
+                            hours = hours === 12 ? hours : hours%12
+                            document.getElementById('time').innerHTML = `${AMPM}:${hours}:${minutes}:${seconds}`
+                            setTimeout(time, 1000)
+                        });
+                    </script>
+            </div>  <!-- текущее время-->
             <div id="theme">Тёмная тема.
                 <script>
                     var clickCount = 0;
@@ -65,14 +82,29 @@
             </details>
         </header>
         <nav id="navigation">
-            <div class="navigation-item">
-                <a class="link" href="https://doka.guide" target="_blank"><p class="pLink">DOKA</p></a>
+            <div class="navigation-item" id="link_1">
+                <a class="link"  href="https://doka.guide" target="_blank"><p class="pLink">DOKA</p></a>
+                <script>
+                    document.getElementById("link_1").addEventListener("click", () => {
+                        window.open("https://doka.guide")
+                    })
+                </script>
             </div>
-            <div class="navigation-item">
+            <div class="navigation-item" id="link_2">
                 <a class="link" href="https://habr.com/ru/feed/" target="_blank"><p class="pLink">Habr</p></a>
+                <script>
+                    document.getElementById("link_2").addEventListener("click", () => {
+                        window.open("https://habr.com/ru/feed/")
+                    })
+                </script>
             </div>
-            <div class="navigation-item">
+            <div class="navigation-item" id="link_3">
                 <a class="link" href="https://itproger.com/" target="_blank"><p class="pLink">ITprogger</p></a>
+                <script>
+                    document.getElementById("link_3").addEventListener("click", () => {
+                        window.open("https://itproger.com/")
+                    })
+                </script>
             </div>
         </nav>
         <section class="content" id="content">
@@ -82,12 +114,6 @@
                     Hello()
                 </script>
             </div>  <!-- написать в тэге Hello! I am Java Script!-->
-            <div class="JavaBox">
-                <div id="time"></div>
-                    <script>
-                        document.addEventListener('DOMContentLoaded',time());
-                    </script>
-            </div>  <!-- показывать текущее время  в реальном времени с использованием setTimeout(), если использовать setInterval(), возникает задержка после загрузки страницы-->
             <div class="JavaBox">
                 <span style="font-size: 32px" onclick="showMessage()">Покажи уведомление<br> с приветствием</span>
             </div>  <!-- использовать метод alert() -->
@@ -137,25 +163,6 @@
                     }), 1000)
                 </script>
         </div>  <!-- Кнопка-триггер c использованием setInterval() и addEventListener() -->
-            <div class="JavaBox" id="off">Выключено
-                <script>
-                        var i = false
-                    setInterval($("#off").click(function () {
-                        if(!i){
-                            $(this).text('Включено...');
-                            this.id = 'on';
-                            $(this).css('backgroundColor', 'rgb(17,255,0)')
-                            i = true
-                        }
-                        else{
-                            $(this).text('Выключено');
-                            this.id = 'off';
-                            $(this).css('backgroundColor', '')
-                            i = false
-                        }
-                    }), 1000)
-                </script>
-        </div>  <!-- Такая же Кнопка-триггер c использованием синтаксиса jQuery -->
  <!--       <div class="JavaBox">
                 <script>
                 </script>
