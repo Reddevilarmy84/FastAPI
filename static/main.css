@@ -43,14 +43,14 @@ body {
 #theme {
     padding: 20px;
     position: absolute;
-    left: 51px;
-    top: 51px;
+    left: 48px;
+    top: 48px;
     background-color: rgba(255, 0, 0, 0.5);
     width: max-content;
     font-size: 1.5vw;
     font-family: "Comic Sans MS";
     color: #e1cdcd;
-    border-top-left-radius: 30px;
+    border-top-left-radius: 2rem;
     transition: all, 0.5s;
     user-select: none;
     cursor: pointer
@@ -66,12 +66,12 @@ body {
     color: white;
     position: absolute;
     width: max-content;
-    right: 51px;
-    top: 51px;
+    right: 48px;
+    top: 48px;
     font-family: "Comic Sans MS";
     font-size: 1.5vw;
     background-color: rgba(255, 0, 0, 0.5);
-    border-top-right-radius: 30px;
+    border-top-right-radius: 2rem;
     user-select: none;
 
 }
