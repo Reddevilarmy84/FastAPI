@@ -7,13 +7,16 @@ import time
 import json
 import os
 
-url = ('https://13.lordfilm-dc.com/filmy/')
+url = 'https://13.lordfilm-dc.com/filmy/'
+
 
 # Получаем путь к директории текущего скрипта
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
+
 # Переходим на уровень выше
 parent_dir = os.path.dirname(script_dir)
+
 
 # Получаем путь к JSON
 path_to_json = os.path.join(script_dir, 'films.json')
@@ -63,6 +66,7 @@ def pars(url, start_page, stop_page):
     for i in range(start_page, stop_page):
         try:
             response = requests.get(f'{url}page/{i}')
+
         except:
             print('Disconect..')
             count_dict += 1
@@ -90,14 +94,8 @@ def pars(url, start_page, stop_page):
             seconds = random.randint(1, 100) / random.randint(50, 100)
             time.sleep(seconds)
             print(f'спали {seconds}')
-    return new_list, find
-
-
-Lord, find = pars(url, 1, 5)
-
-dict_list_to_json(Lord, path_to_json)
+    return new_list
 
 
 
-for i in json_to_dict_list(path_to_json):
-    print(f'{i}')
+#dict_list_to_json(pars(url, 1, 240), path_to_json)

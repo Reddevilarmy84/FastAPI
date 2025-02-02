@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{title}}</title>
 </head>
-<body>
-
+<body id="lordfilms" style="display: flex; flex-wrap: wrap; justify-content: center; background-color: #2c2c2c">
+    {% for item in json %}
+        <a style="text-decoration: none; color: #c5c5c5" href="{{ item.link }}">
+            <div style="height: max-content; width: 200px; background-color: #494949; margin: 18px; padding: 5px; text-align: center; border-radius: 20px; border: black solid 2px; box-shadow: black 4px 4px 10px">
+                <h4 style="text-decoration: none">{{ item.title }}</h4>
+                <img src="{{ item.img }}" alt="{{ item.title }}" style="width: 200px; height: 300px; border: black solid 1px; border-radius: 10px">
+                <h4 style="text-decoration: none">{{ item.year }}</h4>
+            </div>
+        </a>
+    {% endfor %}
 </body>
 </html>

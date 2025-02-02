@@ -71,7 +71,7 @@
                     setInterval(theme, 5000);
                 </script>
             </div>  <!-- Темная и светлая темы + автоопределение -->
-            <h1 id="myHeader">Кодим...</h1>
+            <h1 id="myHeader">{{ title }}</h1>
             <details class="details">
                 <summary>
                     <p>Подробная информация о сайте<p>
@@ -107,8 +107,8 @@
                 </script>
             </div>
             <div class="navigation-item" id="link_4">
-                <a class="link" href="https://itproger.com/" target="_blank"><p class="pLink">Parser</p></a>
-            </div>
+                <a class="link" href="{{ url_for('parser')}}" target="_blank"><p class="pLink">Parser</p></a>
+            </div>>
         </nav>
         <section class="content" id="content">
             <div class="JavaBox">
