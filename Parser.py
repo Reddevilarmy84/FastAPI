@@ -62,11 +62,9 @@ def pars(url, start_page, stop_page):
     print(f'старт')
     new_list = []
     count_dict = 0
-
     for i in range(start_page, stop_page):
         try:
             response = requests.get(f'{url}page/{i}')
-
         except:
             print('Disconect..')
             count_dict += 1
@@ -75,21 +73,21 @@ def pars(url, start_page, stop_page):
             dict['page'] = i
             dict['status'] = None
             new_list.append(dict)
-
         else:
             soup = BeautifulSoup(response.text, 'lxml')
             find = soup.find_all('div', class_="th-item")
             print(f'спарсили {i}')
-
             for item in find:
                 count_dict += 1
                 dict = {}
                 dict['ID'] = count_dict
                 dict['page'] = i
-                dict['year'] = item.find('div', class_="th-year").text
+                dict['year'] = int(item.find('div', class_="th-year").text)
                 dict['title'] = item.find('div', class_="th-title").text
                 dict['link'] = item.find('a', class_="th-in with-mask").get('href')
                 dict['img'] = 'https://13.lordfilm-dc.com/'+item.find('img').get('src')
+                dict['kp'] = item.find('div', class_="th-rate th-rate-kp").text
+                dict['imdb'] = item.find('div', class_="th-rate th-rate-imdb").text
                 new_list.append(dict)
             seconds = random.randint(1, 100) / random.randint(50, 100)
             time.sleep(seconds)
@@ -98,4 +96,5 @@ def pars(url, start_page, stop_page):
 
 
 
-#dict_list_to_json(pars(url, 1, 240), path_to_json)
+dict_list_to_json(pars(url, 1, 240), path_to_json)
+

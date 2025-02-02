@@ -4,15 +4,45 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
 </head>
-<body id="lordfilms" style="display: flex; flex-wrap: wrap; justify-content: center; background-color: #2c2c2c">
-    {% for item in json %}
-        <a style="text-decoration: none; color: #c5c5c5" href="{{ item.link }}">
-            <div style="height: max-content; width: 200px; background-color: #494949; margin: 18px; padding: 5px; text-align: center; border-radius: 20px; border: black solid 2px; box-shadow: black 4px 4px 10px">
-                <h4 style="text-decoration: none">{{ item.title }}</h4>
-                <img src="{{ item.img }}" alt="{{ item.title }}" style="width: 200px; height: 300px; border: black solid 1px; border-radius: 10px">
-                <h4 style="text-decoration: none">{{ item.year }}</h4>
-            </div>
-        </a>
-    {% endfor %}
+<body>
+    <div style="display: flex">
+        <a class="link" href="{{ url_for('parser', year=2020)}}"><p class="pLink">2020</p></a>
+        <a class="link" href="{{ url_for('parser', year=2021)}}"><p class="pLink">2021</p></a>
+        <a class="link" href="{{ url_for('parser', year=2022)}}"><p class="pLink">2022</p></a>
+        <a class="link" href="{{ url_for('parser', year=2023)}}"><p class="pLink">2023</p></a>
+        <a class="link" href="{{ url_for('parser', year=2024)}}"><p class="pLink">2024</p></a>
+        <a class="link" href="{{ url_for('parser', year=2025)}}"><p class="pLink">2025</p></a>
+    </div>
+    <div id="lordfilms" style="display: flex; flex-wrap: wrap; justify-content: center; background-color: #2c2c2c">
+        {% if year %}
+            {% for item in json %}
+                {% if item.year == year %}
+                    <a style="text-decoration: none; color: #c5c5c5" href="{{ item.link }}">
+                        <div style="height: max-content; width: 200px; background-color: #494949; margin: 18px; padding: 5px; text-align: center; border-radius: 20px; border: black solid 2px; box-shadow: black 4px 4px 10px">
+                            <h4 style="text-decoration: none">{{ item.title }}</h4>
+                            <img src="{{ item.img }}" alt="{{ item.title }}" style="width: 200px; height: 300px; border: black solid 1px; border-radius: 10px">
+                            <h4 style="text-decoration: none">{{ item.year }}</h4>
+                            {% if item.kp %}
+                                <h4 style="text-decoration: none">kp: {{ item.kp }}</h4>
+                            {% endif %}
+                            {% if item.imdb %}
+                            <h4 style="text-decoration: none">imdb: {{ item.imdb }}</h4>
+                            {% endif %}
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for item in json %}
+                <a style="text-decoration: none; color: #c5c5c5" href="{{ item.link }}">
+                    <div style="height: max-content; width: 200px; background-color: #494949; margin: 18px; padding: 5px; text-align: center; border-radius: 20px; border: black solid 2px; box-shadow: black 4px 4px 10px">
+                        <h4 style="text-decoration: none">{{ item.title }}</h4>
+                        <img src="{{ item.img }}" alt="{{ item.title }}" style="width: 200px; height: 300px; border: black solid 1px; border-radius: 10px">
+                        <h4 style="text-decoration: none">{{ item.year }}</h4>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
 </body>
 </html>

@@ -12,19 +12,19 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def home(request: Request):
     context = {
+        "id": id,
         "request": request,
-        "title": "Home Page"
+        "title": "Кодим..."
     }
     return templates.TemplateResponse("home.html", context)
 
-@app.get("/parser/")
-async def parser(request: Request, year: int, page: int):
+@app.get("/parser/{year}")
+async def parser(request: Request, year: int = None):
     json = json_to_dict_list(path_to_json)
-    data = {
-        "request": request,
+    context = {
         "year": year,
-        "page": page,
+        "request": request,
         "title": 'Парсер LordFilms',
         'json': json,
     }
-    return templates.TemplateResponse("parser.html", data)
+    return templates.TemplateResponse("parser.html", context)
