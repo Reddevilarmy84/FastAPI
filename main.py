@@ -28,3 +28,16 @@ async def parser(request: Request, year: int = None):
         'json': json,
     }
     return templates.TemplateResponse("parser.html", context)
+
+@app.get("/details/{id}")
+async def details(request: Request, id: int = None):
+    json = json_to_dict_list(path_to_json)
+    for i in json:
+        if i['ID'] == id:
+            item = i
+    context = {
+        "item": item,
+        "id": id,
+        "request": request,
+    }
+    return templates.TemplateResponse("details.html", context)

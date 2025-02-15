@@ -96,5 +96,5 @@ def pars(url, start_page, stop_page):
 
 
 
-dict_list_to_json(pars(url, 1, 240), path_to_json)
+#dict_list_to_json(pars(url, 1, 240), path_to_json)
 

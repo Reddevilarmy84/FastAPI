@@ -29,15 +29,26 @@
                 {% if item.year == year %}
                     <a style="text-decoration: none; color: #c5c5c5" href="{{ item.link }}">
                         <div style="height: 430px; width: 200px; background-color: #494949; margin: 6px; padding: 0px; text-align: center; border-radius: 20px; border: black solid 2px; box-shadow: black 4px 4px 10px">
-                            <p style="height: 30px; padding: 0px">{{ item.title }}</p>
+                            {% if item.ID %}
+                            <a style="text-decoration: none; color: #dedede; position: absolute" href="{{ url_for('details', id=item.ID )}}">details</a>
+                            {% endif %}
+                            <p style="height: 30px; padding: 0px; color: #c5c5c5">{{ item.title }}</p>
+
                             <img src="{{ item.img }}" alt="{{ item.title }}" style="width: 200px; height: 300px; border: black solid 1px; border-radius: 10px">
-                            <h3 style="margin: 0; padding: 10px">{{ item.year }}</h3>
+                            <h3 style="margin: 0; padding: 10px; color: #c5c5c5">{{ item.year }}</h3>
+
                             {% if item.kp %}
-                            <p style="margin: 0; padding: 0">kp: {{ item.kp }}
+                            <p style="margin: 0; padding: 0; color: #c5c5c5; position: relative; left: 60px">kp: {{ item.kp }}</p>
+                            {% else %}
+                            <p style="margin: 0; padding: 0; color: #c5c5c5; position: relative; left: 60px;">.</p>
                             {% endif %}
+
                             {% if item.imdb %}
-                            imdb: {{ item.imdb }}</p>
+                            <p style="margin: 0; padding: 0; color: #c5c5c5; position: relative; right: 60px; bottom: 18px">imdb: {{ item.imdb }}</p>
+                            {% else %}
+                            <p style="margin: 0; padding: 0; color: #c5c5c5; position: relative; right: 60px; bottom: 18px; display: none">.</p>
                             {% endif %}
+
                         </div>
                     </a>
                 {% endif %}
