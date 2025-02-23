@@ -1,7 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import lxml
-import re
 import random
 import time
 import json
@@ -97,4 +95,5 @@ def pars(url, start_page, stop_page):
 
 
 #dict_list_to_json(pars(url, 1, 240), path_to_json)
+
 
